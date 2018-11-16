@@ -1,0 +1,15 @@
+{% extends "learning_logs/base.html" %}
+{% block content %}
+	<p>Topics</p>
+	<ul>
+	<!-- every topic has two field text and date_added,  
+	which was defind in models-->
+		{% for topic in tt %}
+			<li>
+				<a href="{% url 'learning_logsAAA:topic' topic.id %}">{{ topic }}</a>
+				</li>
+		{% empty %}
+			<li> NO topics have been added yet.</li>
+		{% endfor %}
+	</ul>
+{% endblock content %}
